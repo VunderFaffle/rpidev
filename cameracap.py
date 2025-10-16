@@ -26,7 +26,7 @@ client = OpenAI(
 )
 
 def ask(image_path: str):
-    img_data_url = encode_image(f"{cwd}\\{image_path}")
+    img_data_url = encode_image(f"{cwd}/{image_path}")
     content = [
     {
         "type": "text",
