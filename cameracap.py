@@ -2,8 +2,8 @@ import subprocess
 from openai import OpenAI
 import os
 
-subprocess.run(["ffmpeg", "-f", "v4l2", "-i", "/dev/video0", "-frames:v", "1", "output.jpg"], check=True)
-subprocess.run(["bash", "i2s.sh", "output.jpg"], check=True)
+subprocess.run(["ffmpeg","-y", "-f", "v4l2", "-i", "/dev/video0", "-frames:v", "1", "output.jpg", "&>", "/dev/null"], check=True)
+subprocess.run(["bash", "i2s.sh", "output.jpg", "&>", "/dev/null"], check=True)
 
 cwd = os.path.dirname(os.path.abspath(__file__))
 
