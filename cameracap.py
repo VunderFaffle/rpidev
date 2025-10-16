@@ -47,4 +47,4 @@ def ask(image_path: str):
     )
     return chat_completion.choices[0].message.content
 
-print(ask("output.png"))
+print(ask("output.jpg"))
